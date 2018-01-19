@@ -1,7 +1,5 @@
-import { L10n, setCulture } from '@syncfusion/ej2-base';
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { GridComponent } from '@syncfusion/ej2-ng-grids';
-import { DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
 import { data } from './data';
 
 
@@ -25,13 +23,11 @@ export class AppComponent implements OnInit {
     public toggle: boolean;
     ngOnInit(): void {
         this.data = [],
-            this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
         this.toolbar = ['add', 'edit', 'delete', 'update', 'cancel'];
     }
     bound(e) {
-
         this.toggle = this.grid.currentViewData.length ? true : false;  // checks the grid records
-
         //  this.grid.editSettings.allowAdding = this.toggle; // To disable add
         this.grid.editSettings.allowEditing = this.toggle;
         this.grid.editSettings.allowDeleting = this.toggle;
